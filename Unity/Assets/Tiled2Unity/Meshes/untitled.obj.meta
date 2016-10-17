@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: ca2b420a5cfc9b548b8364bbf2f07817
+timeCreated: 1476421356
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: mesh_0001
+    100002: mesh_0002
+    100004: //RootNode
+    100006: mesh_tile_0470
+    100008: mesh_tile_0471
+    100010: mesh_tile_0472
+    100012: mesh_tile_0474
+    100014: mesh_tile_0476
+    100016: mesh_tile_0477
+    100018: mesh_tile_0480
+    100020: mesh_tile_0482
+    100022: mesh_tile_0483
+    100024: mesh_tile_0484
+    100026: mesh_tile_0491
+    100028: mesh_tile_0492
+    100030: mesh_tile_0493
+    100032: mesh_tile_0496
+    100034: mesh_tile_0498
+    100036: mesh_tile_0499
+    100038: mesh_tile_0500
+    100040: mesh_tile_0502
+    400000: mesh_0001
+    400002: mesh_0002
+    400004: //RootNode
+    400006: mesh_tile_0470
+    400008: mesh_tile_0471
+    400010: mesh_tile_0472
+    400012: mesh_tile_0474
+    400014: mesh_tile_0476
+    400016: mesh_tile_0477
+    400018: mesh_tile_0480
+    400020: mesh_tile_0482
+    400022: mesh_tile_0483
+    400024: mesh_tile_0484
+    400026: mesh_tile_0491
+    400028: mesh_tile_0492
+    400030: mesh_tile_0493
+    400032: mesh_tile_0496
+    400034: mesh_tile_0498
+    400036: mesh_tile_0499
+    400038: mesh_tile_0500
+    400040: mesh_tile_0502
+    2300000: mesh_0001
+    2300002: mesh_0002
+    2300004: mesh_tile_0470
+    2300006: mesh_tile_0471
+    2300008: mesh_tile_0472
+    2300010: mesh_tile_0474
+    2300012: mesh_tile_0476
+    2300014: mesh_tile_0477
+    2300016: mesh_tile_0480
+    2300018: mesh_tile_0482
+    2300020: mesh_tile_0483
+    2300022: mesh_tile_0484
+    2300024: mesh_tile_0491
+    2300026: mesh_tile_0492
+    2300028: mesh_tile_0493
+    2300030: mesh_tile_0496
+    2300032: mesh_tile_0498
+    2300034: mesh_tile_0499
+    2300036: mesh_tile_0500
+    2300038: mesh_tile_0502
+    3300000: mesh_0001
+    3300002: mesh_0002
+    3300004: mesh_tile_0470
+    3300006: mesh_tile_0471
+    3300008: mesh_tile_0472
+    3300010: mesh_tile_0474
+    3300012: mesh_tile_0476
+    3300014: mesh_tile_0477
+    3300016: mesh_tile_0480
+    3300018: mesh_tile_0482
+    3300020: mesh_tile_0483
+    3300022: mesh_tile_0484
+    3300024: mesh_tile_0491
+    3300026: mesh_tile_0492
+    3300028: mesh_tile_0493
+    3300030: mesh_tile_0496
+    3300032: mesh_tile_0498
+    3300034: mesh_tile_0499
+    3300036: mesh_tile_0500
+    3300038: mesh_tile_0502
+    4300000: mesh_0001
+    4300002: mesh_0002
+    4300004: mesh_tile_0470
+    4300006: mesh_tile_0471
+    4300008: mesh_tile_0472
+    4300010: mesh_tile_0474
+    4300012: mesh_tile_0476
+    4300014: mesh_tile_0477
+    4300016: mesh_tile_0480
+    4300018: mesh_tile_0482
+    4300020: mesh_tile_0483
+    4300022: mesh_tile_0484
+    4300024: mesh_tile_0491
+    4300026: mesh_tile_0492
+    4300028: mesh_tile_0493
+    4300030: mesh_tile_0496
+    4300032: mesh_tile_0498
+    4300034: mesh_tile_0499
+    4300036: mesh_tile_0500
+    4300038: mesh_tile_0502
+    11400000: mesh_0001
+    11400002: mesh_0002
+    11400004: mesh_tile_0470
+    11400006: mesh_tile_0471
+    11400008: mesh_tile_0472
+    11400010: mesh_tile_0474
+    11400012: mesh_tile_0476
+    11400014: mesh_tile_0477
+    11400016: mesh_tile_0480
+    11400018: mesh_tile_0482
+    11400020: mesh_tile_0483
+    11400022: mesh_tile_0484
+    11400024: mesh_tile_0491
+    11400026: mesh_tile_0492
+    11400028: mesh_tile_0493
+    11400030: mesh_tile_0496
+    11400032: mesh_tile_0498
+    11400034: mesh_tile_0499
+    11400036: mesh_tile_0500
+    11400038: mesh_tile_0502
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 0
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

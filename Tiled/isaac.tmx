@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="128" tileheight="128" nextobjectid="112">
+ <tileset firstgid="1" name="spritesheet_tiles" tilewidth="128" tileheight="128" spacing="2" tilecount="465" columns="31">
+  <image source="../Unity/Assets/Sprites/Racing/Spritesheets/spritesheet_tiles.png" width="4096" height="2048"/>
+  <tile id="80">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="143">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="205">
+   <objectgroup draworder="index"/>
+  </tile>
+  <tile id="268">
+   <objectgroup draworder="index"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="466" name="Ojects" tilewidth="448" tileheight="256" tilecount="39" columns="0">
+  <tile id="0">
+   <image width="165" height="99" source="../Unity/Assets/Sprites/Racing/PNG/Objects/arrow_white.png"/>
+  </tile>
+  <tile id="1">
+   <image width="165" height="99" source="../Unity/Assets/Sprites/Racing/PNG/Objects/arrow_yellow.png"/>
+  </tile>
+  <tile id="2">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_blue.png"/>
+  </tile>
+  <tile id="3">
+   <image width="70" height="48" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_blue_down.png"/>
+  </tile>
+  <tile id="4">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_red.png"/>
+  </tile>
+  <tile id="5">
+   <image width="70" height="48" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_red_down.png"/>
+  </tile>
+  <tile id="6">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_red.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="210" height="62"/>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_red_race.png"/>
+  </tile>
+  <tile id="8">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_white.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="210" height="62"/>
+   </objectgroup>
+  </tile>
+  <tile id="9">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_white_race.png"/>
+  </tile>
+  <tile id="10">
+   <image width="46" height="44" source="../Unity/Assets/Sprites/Racing/PNG/Objects/cone_down.png"/>
+  </tile>
+  <tile id="11">
+   <image width="45" height="44" source="../Unity/Assets/Sprites/Racing/PNG/Objects/cone_straight.png"/>
+  </tile>
+  <tile id="12">
+   <image width="98" height="235" source="../Unity/Assets/Sprites/Racing/PNG/Objects/light_white.png"/>
+  </tile>
+  <tile id="13">
+   <image width="98" height="235" source="../Unity/Assets/Sprites/Racing/PNG/Objects/light_yellow.png"/>
+  </tile>
+  <tile id="14">
+   <image width="160" height="64" source="../Unity/Assets/Sprites/Racing/PNG/Objects/lights.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="13.6667" width="160" height="50.3333"/>
+    <object id="3" x="64" y="0" width="30" height="30">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="15">
+   <image width="109" height="95" source="../Unity/Assets/Sprites/Racing/PNG/Objects/oil.png"/>
+  </tile>
+  <tile id="16">
+   <image width="89" height="72" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock1.png"/>
+  </tile>
+  <tile id="17">
+   <image width="73" height="68" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock2.png"/>
+  </tile>
+  <tile id="18">
+   <image width="87" height="67" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock3.png"/>
+  </tile>
+  <tile id="19">
+   <image width="60" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_1.png"/>
+  </tile>
+  <tile id="20">
+   <image width="60" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_2.png"/>
+  </tile>
+  <tile id="21">
+   <image width="76" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_3.png"/>
+  </tile>
+  <tile id="22">
+   <image width="60" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_1.png"/>
+  </tile>
+  <tile id="23">
+   <image width="60" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_2.png"/>
+  </tile>
+  <tile id="24">
+   <image width="76" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_3.png"/>
+  </tile>
+  <tile id="25">
+   <image width="128" height="128" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_blue.png"/>
+  </tile>
+  <tile id="26">
+   <image width="256" height="256" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_blue_large.png"/>
+  </tile>
+  <tile id="27">
+   <image width="128" height="128" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_red.png"/>
+  </tile>
+  <tile id="28">
+   <image width="256" height="256" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_red_large.png"/>
+  </tile>
+  <tile id="29">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_red.png"/>
+  </tile>
+  <tile id="30">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_red_alt.png"/>
+  </tile>
+  <tile id="31">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_white.png"/>
+  </tile>
+  <tile id="32">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_white_alt.png"/>
+  </tile>
+  <tile id="33">
+   <image width="214" height="212" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tree_large.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="73" y="73" width="66" height="66">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="34">
+   <image width="141" height="141" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tree_small.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="47.6667" y="47.6667" width="45.6667" height="45.6667">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="35">
+   <image width="448" height="223" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_empty.png"/>
+  </tile>
+  <tile id="36">
+   <image width="448" height="223" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_full.png"/>
+  </tile>
+  <tile id="37">
+   <image width="448" height="144" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_overhang_red.png"/>
+  </tile>
+  <tile id="38">
+   <image width="448" height="144" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_overhang_striped.png"/>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="32" height="32">
+  <data encoding="csv">
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,287,287,287,287,287,287,287,287,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,287,287,287,287,287,287,287,287,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,287,287,287,287,287,287,287,287,287,287,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,287,287,287,287,287,287,287,287,287,287,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+380,132,132,132,132,132,349,287,70,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+256,325,77,77,77,294,163,132,132,132,132,132,132,132,132,349,287,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+256,201,69,69,69,263,15,15,15,15,15,15,15,15,15,163,349,70,70,70,70,70,70,70,70,380,132,132,132,132,349,70,
+256,201,69,69,69,263,15,15,15,15,15,15,15,15,15,15,318,70,70,70,70,70,70,70,380,101,15,15,15,15,318,70,
+256,201,69,69,69,263,15,15,15,15,15,15,15,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,15,15,318,70,
+256,201,69,69,69,263,15,15,15,15,39,8,441,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,15,39,194,70,
+256,201,69,69,69,263,15,15,15,15,318,70,256,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,39,194,287,70,
+256,201,69,69,69,263,15,15,15,15,318,287,256,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,318,70,70,70,
+256,201,69,69,69,263,15,15,15,15,318,287,256,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,318,70,70,70,
+256,201,69,69,69,263,15,15,15,15,318,287,256,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,318,70,70,70,
+256,201,69,69,69,263,15,15,15,15,318,287,256,15,15,15,318,70,70,70,70,70,70,70,256,15,15,15,318,70,70,70,
+256,201,69,69,69,263,39,8,8,8,194,287,225,8,8,8,194,70,70,70,70,70,70,70,256,15,15,15,163,349,287,70,
+256,170,131,131,131,139,318,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,256,15,15,15,15,163,349,70,
+225,8,8,8,8,8,194,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,256,15,15,15,15,15,318,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,225,441,15,15,15,15,318,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,287,225,8,8,8,8,194,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,
+70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70,70
+</data>
+ </layer>
+ <layer name="Tile Layer 2" width="32" height="32">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,347,316,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,68,37,0,0,0,0,0,0,0,0,0,
+0,253,377,222,283,283,283,283,283,283,283,283,283,283,283,283,283,283,283,283,438,377,407,1,269,269,269,269,83,52,0,0,
+0,408,377,346,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,344,313,438,377,175,175,175,175,175,422,0,0,
+0,421,175,390,269,269,269,269,269,269,269,83,52,0,0,0,0,0,0,0,0,0,344,313,81,81,81,453,175,144,0,0,
+0,327,296,81,81,81,81,81,81,81,453,175,422,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,145,114,269,269,269,269,269,269,359,175,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,51,175,175,175,175,175,175,175,175,175,328,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,206,175,20,81,81,81,81,81,81,265,234,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,110,79,48,0,0,
+0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,408,377,346,0,0,200,169,324,324,324,324,324,138,107,0,0,0,0,0,0,0,0,0,0,76,45,230,199,0,0,
+0,0,408,377,346,0,0,106,230,230,230,230,230,230,230,13,0,0,0,0,0,0,0,0,0,0,446,230,230,14,0,0,
+0,0,408,377,346,0,0,261,230,75,136,136,136,44,230,199,0,0,0,0,0,0,0,0,0,76,45,230,415,384,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,446,230,230,14,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,415,384,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,199,0,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,199,0,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,199,0,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,199,0,0,0,0,
+0,0,408,377,346,0,0,261,230,199,0,0,0,261,230,199,0,0,0,0,0,0,0,0,0,261,230,199,0,0,0,0,
+0,0,408,377,346,0,0,206,175,144,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,352,230,321,290,0,0,0,
+0,0,206,175,144,0,0,206,175,144,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,258,227,230,196,0,0,0,
+0,0,206,175,144,0,0,206,175,144,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,352,230,321,290,0,0,
+0,0,206,175,144,0,0,206,175,144,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,258,227,230,196,0,0,
+0,0,206,175,144,0,0,206,175,144,0,0,0,206,175,144,0,0,0,0,0,0,0,0,0,0,0,206,175,144,0,0,
+0,0,206,175,390,269,269,359,175,144,0,0,0,206,175,390,269,269,269,269,269,269,269,269,269,269,269,359,175,144,0,0,
+0,0,421,175,175,175,175,175,175,328,0,0,0,421,175,175,175,175,175,175,175,175,175,175,175,175,175,175,175,144,0,0,
+0,0,327,296,81,81,81,81,265,234,0,0,0,327,296,81,81,81,81,81,81,81,81,81,81,81,81,81,81,82,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <properties>
+   <property name="unity:sortingLayerName" value="Background"/>
+  </properties>
+ </objectgroup>
+ <objectgroup name="Object Layer 2">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+ </objectgroup>
+</map>
