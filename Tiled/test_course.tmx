@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="128" tileheight="128" nextobjectid="78">
+ <tileset firstgid="1" name="Ojects" tilewidth="448" tileheight="256" tilecount="39" columns="0">
+  <tile id="0">
+   <properties>
+    <property name="opacity" type="float" value="0.5"/>
+   </properties>
+   <image width="165" height="99" source="../Unity/Assets/Sprites/Racing/PNG/Objects/arrow_white.png"/>
+  </tile>
+  <tile id="1">
+   <image width="165" height="99" source="../Unity/Assets/Sprites/Racing/PNG/Objects/arrow_yellow.png"/>
+  </tile>
+  <tile id="2">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_blue.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <image width="70" height="48" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_blue_down.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0" width="70" height="48"/>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_red.png"/>
+   <objectgroup draworder="index">
+    <object id="3" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="5">
+   <image width="70" height="48" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrel_red_down.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="70" height="48"/>
+   </objectgroup>
+  </tile>
+  <tile id="6">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_red.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="210" height="62"/>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_red_race.png"/>
+  </tile>
+  <tile id="8">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_white.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="210" height="62"/>
+   </objectgroup>
+  </tile>
+  <tile id="9">
+   <image width="210" height="62" source="../Unity/Assets/Sprites/Racing/PNG/Objects/barrier_white_race.png"/>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="AddComp" value="TrafficCone"/>
+   </properties>
+   <image width="46" height="44" source="../Unity/Assets/Sprites/Racing/PNG/Objects/cone_down.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0.545455" y="5.45455" width="45.0909" height="31.8182"/>
+   </objectgroup>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="AddComp" value="TrafficCone"/>
+   </properties>
+   <image width="45" height="44" source="../Unity/Assets/Sprites/Racing/PNG/Objects/cone_straight.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="45" height="44"/>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <image width="98" height="235" source="../Unity/Assets/Sprites/Racing/PNG/Objects/light_white.png"/>
+  </tile>
+  <tile id="13">
+   <image width="98" height="235" source="../Unity/Assets/Sprites/Racing/PNG/Objects/light_yellow.png"/>
+  </tile>
+  <tile id="14">
+   <image width="160" height="64" source="../Unity/Assets/Sprites/Racing/PNG/Objects/lights.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="13.6667" width="160" height="50.3333"/>
+    <object id="3" x="64" y="0" width="30" height="30">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="15">
+   <image width="109" height="95" source="../Unity/Assets/Sprites/Racing/PNG/Objects/oil.png"/>
+  </tile>
+  <tile id="16">
+   <image width="89" height="72" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock1.png"/>
+   <objectgroup draworder="index">
+    <object id="3" x="1.63636" y="52.3636">
+     <polygon points="0,0 14.1818,-29.0909 45.8182,-51.2727 84,-27.0909 68,12.7273 31.8182,6.72727 15.2727,18.5455"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="17">
+   <image width="73" height="68" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock2.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="2.72727" y="32.7273">
+     <polygon points="0,0 28.3636,-30.3636 68.9091,-20.3636 68.9091,10.9091 41.2727,34 8,27.8182"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="18">
+   <image width="87" height="67" source="../Unity/Assets/Sprites/Racing/PNG/Objects/rock3.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="2" y="42">
+     <polygon points="0,0 31.0909,-41.2727 66.5455,-35.6364 83.8182,-6.54545 54.9091,22.9091 17.8182,18.5455"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="19">
+   <image width="60" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_1.png"/>
+  </tile>
+  <tile id="20">
+   <image width="60" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_2.png"/>
+  </tile>
+  <tile id="21">
+   <image width="76" height="192" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_long_3.png"/>
+  </tile>
+  <tile id="22">
+   <image width="60" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_1.png"/>
+  </tile>
+  <tile id="23">
+   <image width="60" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_2.png"/>
+  </tile>
+  <tile id="24">
+   <image width="76" height="16" source="../Unity/Assets/Sprites/Racing/PNG/Objects/skidmark_short_3.png"/>
+  </tile>
+  <tile id="25">
+   <image width="128" height="128" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_blue.png"/>
+  </tile>
+  <tile id="26">
+   <image width="256" height="256" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_blue_large.png"/>
+  </tile>
+  <tile id="27">
+   <image width="128" height="128" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_red.png"/>
+  </tile>
+  <tile id="28">
+   <image width="256" height="256" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tent_red_large.png"/>
+  </tile>
+  <tile id="29">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_red.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="30">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_red_alt.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="31">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_white.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="32">
+   <image width="56" height="56" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tires_white_alt.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="56" height="56">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="33">
+   <image width="214" height="212" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tree_large.png"/>
+   <objectgroup draworder="index">
+    <object id="2" x="73" y="73" width="66" height="66">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="34">
+   <image width="141" height="141" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tree_small.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="47.6667" y="47.6667" width="45.6667" height="45.6667">
+     <ellipse/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="35">
+   <image width="448" height="223" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_empty.png"/>
+  </tile>
+  <tile id="36">
+   <image width="448" height="223" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_full.png"/>
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="448" height="223"/>
+   </objectgroup>
+  </tile>
+  <tile id="37">
+   <image width="448" height="144" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_overhang_red.png"/>
+  </tile>
+  <tile id="38">
+   <image width="448" height="144" source="../Unity/Assets/Sprites/Racing/PNG/Objects/tribune_overhang_striped.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="40" name="map2" tilewidth="128" tileheight="128" tilecount="512" columns="32">
+  <image source="map2.png" width="4096" height="2048"/>
+  <terraintypes>
+   <terrain name="Grass" tile="-1"/>
+   <terrain name="Dirt" tile="-1"/>
+   <terrain name="Sand" tile="-1"/>
+  </terraintypes>
+  <tile id="0">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="1">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="2">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 0,-128 -33.6667,-125.667 -65.6667,-115.667 -96,-95.6667 -115.667,-67.6667 -126.333,-33.6667 -128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="3">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="4">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 128,0 125,-34 114.667,-66 95,-95.6667 66,-116.667 34.3333,-126.333 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="7">
+   <objectgroup draworder="index" name="nw_2">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -104,-0.333333 -61.6667,-61.3333 0,-103.333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="8">
+   <objectgroup draworder="index" name="nw_3">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -128,0 -128,-103 -67,-121.667 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="9">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 67,-123 127.667,-104.333 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="10">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0.333333,-104 61.3333,-61.6667 102.333,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="18" terrain="1,1,1,0"/>
+  <tile id="19" terrain="1,1,0,0"/>
+  <tile id="20" terrain="1,1,0,1"/>
+  <tile id="21" terrain="2,2,2,1"/>
+  <tile id="22" terrain="2,2,1,1"/>
+  <tile id="23" terrain="2,2,1,2"/>
+  <tile id="34">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="35">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <objectgroup draworder="index" name="nw_1">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -128,0 -123,-67.3333 -104.333,-128.333 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="40">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="41">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="42">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 102.667,-128.333 121,-67.3333 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="50" terrain="1,0,1,0"/>
+  <tile id="51" terrain="0,0,0,0"/>
+  <tile id="52" terrain="0,1,0,1"/>
+  <tile id="53" terrain="2,1,2,1"/>
+  <tile id="54" terrain="1,1,1,1"/>
+  <tile id="55" terrain="1,2,1,2"/>
+  <tile id="66">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 0,-128 -128,-128 -126,-94.3333 -116.333,-61.6667 -97.3333,-34 -67.3333,-13 -35,-2.66667"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="67">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="68">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="0">
+     <polygon points="0,0 -128,0 -128,128 -95,124.333 -62.6667,114 -33,95 -12.6667,65.3333 -2,33"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="71">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -102.667,0 -122.667,-62.6667 -128,-128 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="72">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="73">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="74">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 128,-128 121.667,-61.3333 103.667,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="82" terrain="1,0,1,1"/>
+  <tile id="83" terrain="0,0,1,1"/>
+  <tile id="84" terrain="0,1,1,1"/>
+  <tile id="85" terrain="2,1,2,2"/>
+  <tile id="86" terrain="1,1,2,2"/>
+  <tile id="87" terrain="1,2,2,2"/>
+  <tile id="96">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="97">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="98">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="99">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="100">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="103">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="0">
+     <polygon points="0,0 0,102.667 -61.6667,62 -104,-0.333333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="104">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -68,-5.33333 -127.667,-24 -128,-128 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="105">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 128,-128 128,-25.6667 66.6667,-6.33333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="106">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0">
+     <polygon points="0,0 103,-0.333333 62,61.6667 -0.333333,102"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="110">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="111">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="112">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="114" terrain="0,0,0,1"/>
+  <tile id="115" terrain="0,0,1,0"/>
+  <tile id="116" terrain="0,0,0,0"/>
+  <tile id="117" terrain="1,1,1,2"/>
+  <tile id="118" terrain="1,1,2,1"/>
+  <tile id="119" terrain="1,1,1,1"/>
+  <tile id="128">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="129">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="130">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="131">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="142">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="143">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="144">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="146" terrain="0,1,0,0"/>
+  <tile id="147" terrain="1,0,0,0"/>
+  <tile id="149" terrain="1,2,1,1"/>
+  <tile id="150" terrain="2,1,1,1"/>
+  <tile id="163">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="171">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -64.6667,0 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="172">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="173">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 128,-128 64.6667,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="174">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 128.333,-65.6667 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="175">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -128,0 -127.667,-65.6667 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="176">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 128,-65.3333 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="177">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 -0.333333,-65.6667 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="178" terrain="1,1,1,2"/>
+  <tile id="179" terrain="1,1,2,2"/>
+  <tile id="180" terrain="1,1,2,1"/>
+  <tile id="181" terrain="2,2,2,2"/>
+  <tile id="194">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="196">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="203">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -128,0 -64.3333,-128.333 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="204">
+   <objectgroup draworder="index">
+    <object id="2" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="205">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="128">
+     <polygon points="0,0 0,-128 66,-128.333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="206">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="207">
+   <objectgroup draworder="index">
+    <object id="2" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="208">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="209">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="210" terrain="1,2,1,2"/>
+  <tile id="211" terrain="2,2,2,2"/>
+  <tile id="212" terrain="2,1,2,1"/>
+  <tile id="213" terrain="2,2,2,1"/>
+  <tile id="214" terrain="2,2,1,2"/>
+  <tile id="227">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="235">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="128">
+     <polygon points="0,0 -64.6667,0 -128,-128 0,-128"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="236">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="237">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 64.6667,0.333333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="238">
+   <objectgroup draworder="index">
+    <object id="2" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 128,-128 128.333,-64.6667"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="239">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0">
+     <polygon points="0,0 128,0 -0.333333,64.3333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="240">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0">
+     <polygon points="0,0 128,0 128,65.3333"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="241">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0">
+     <polygon points="0,0 128,0 128,128 0,65"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="242" terrain="1,2,1,1"/>
+  <tile id="243" terrain="2,2,1,1"/>
+  <tile id="244" terrain="2,1,1,1"/>
+  <tile id="245" terrain="2,1,2,2"/>
+  <tile id="246" terrain="1,2,2,2"/>
+  <tile id="267">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="128" y="0">
+     <polygon points="0,0 0,128 -65.3333,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="268">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="0" width="128" height="128"/>
+   </objectgroup>
+  </tile>
+  <tile id="269">
+   <objectgroup draworder="index">
+    <object id="1" type="Road_Track" x="0" y="128">
+     <polygon points="0,0 0,-128 64.6667,-128 128,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Ground" width="32" height="32">
+  <data encoding="csv">
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,154,123,123,123,123,123,123,155,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,154,124,94,159,94,94,159,159,122,155,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,92,94,159,159,94,159,159,94,159,90,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,92,94,58,59,59,59,59,60,94,90,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,186,59,187,91,91,91,91,186,59,187,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,
+91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91,91
+</data>
+ </layer>
+ <layer name="Track" width="32" height="32">
+  <properties>
+   <property name="unity:isTrigger" value="true"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,47,48,43,49,50,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,79,80,107,81,82,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,76,0,74,76,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,74,76,0,74,171,41,41,44,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,47,48,43,43,43,43,43,182,43,113,114,0,74,76,0,0,40,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,79,80,107,107,107,107,107,184,107,145,146,0,74,76,0,0,40,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,74,76,0,0,0,0,0,0,0,0,0,0,74,76,0,0,40,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,74,76,0,0,0,0,0,0,0,0,0,0,74,76,0,0,40,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,74,76,0,0,0,0,0,0,0,0,0,0,74,171,41,41,108,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,74,76,0,214,215,203,203,203,203,216,217,0,74,76,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,111,112,43,246,247,267,267,267,267,248,249,43,113,114,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,143,144,107,278,279,0,0,0,0,280,281,107,145,146,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="Markings" opacity="0.5">
+  <object id="74" gid="1" x="1448" y="2131.5" width="165" height="99" rotation="-90"/>
+  <object id="76" gid="1" x="1576" y="2131.5" width="165" height="99" rotation="-90"/>
+  <object id="77" gid="1" x="1704" y="2131.5" width="165" height="99" rotation="-90"/>
+ </objectgroup>
+ <objectgroup name="Background Props">
+  <properties>
+   <property name="unity:sortingLayerName" value="Background"/>
+  </properties>
+  <object id="4" gid="37" x="1229.61" y="1150.62" width="448" height="223" rotation="-2.74952"/>
+  <object id="5" gid="37" x="728" y="1165" width="448" height="223"/>
+  <object id="6" gid="7" x="1499.36" y="1189.9" width="210" height="62" rotation="178.853"/>
+  <object id="7" gid="9" x="1740.15" y="1166.1" width="210" height="62" rotation="173.948"/>
+  <object id="12" gid="17" x="1220.63" y="1717.75" width="67.6983" height="54.7671" rotation="4.72802"/>
+  <object id="13" gid="18" x="1153.39" y="1772.16" width="55.5278" height="51.7245" rotation="30.7168"/>
+  <object id="14" gid="19" x="1376.22" y="1664.33" width="66.177" height="50.9639" rotation="256.252"/>
+  <object id="15" gid="15" x="1276.39" y="1546.64" width="160" height="64" rotation="-200.834"/>
+  <object id="16" gid="12" x="1765" y="1605" width="45" height="44">
+   <properties>
+    <property name="AddComp" value="TrafficCone"/>
+   </properties>
+  </object>
+  <object id="17" gid="12" x="1899.56" y="1595.21" width="45" height="44" rotation="-19.3418"/>
+  <object id="18" gid="12" x="1977.48" y="1531.69" width="45" height="44" rotation="10.1428"/>
+  <object id="19" gid="11" x="2055.02" y="1464.81" width="46" height="44" rotation="-31.7595"/>
+  <object id="23" gid="15" x="2065.67" y="1912.33" width="160" height="64" rotation="-34.0772"/>
+  <object id="24" gid="7" x="1985.61" y="1926.17" width="210" height="62" rotation="207.063"/>
+  <object id="25" gid="7" x="1507.42" y="1831.28" width="210" height="62" rotation="-177.14"/>
+  <object id="26" gid="9" x="1742.3" y="1832.71" width="210" height="62" rotation="178.745"/>
+  <object id="30" gid="19" x="635.54" y="1267.42" width="87" height="67" rotation="-194.084"/>
+  <object id="31" gid="37" x="580.017" y="1957.15" width="448" height="223" rotation="271.394"/>
+  <object id="32" gid="31" x="1732" y="1092" width="56" height="56"/>
+  <object id="33" gid="33" x="1735" y="1034" width="56" height="56"/>
+  <object id="34" gid="33" x="1757.01" y="924.689" width="56" height="56" rotation="0.673047"/>
+  <object id="35" gid="31" x="1740.33" y="979.65" width="56" height="56" rotation="0.673047"/>
+  <object id="45" gid="17" x="2476" y="1996" width="65" height="52.5843"/>
+  <object id="49" gid="5" x="2733" y="2014" width="56" height="56"/>
+  <object id="50" gid="5" x="2847" y="1994" width="56" height="56"/>
+  <object id="51" gid="6" x="2805.45" y="1954.17" width="70" height="48" rotation="-29.6392"/>
+  <object id="52" gid="15" x="1634.7" y="2207.85" width="160" height="64" rotation="-203.408"/>
+ </objectgroup>
+ <objectgroup name="Foreground Props">
+  <properties>
+   <property name="unity:sortingLayerName" value="Foreground"/>
+  </properties>
+  <object id="53" gid="34" x="542" y="1236" width="214" height="212"/>
+  <object id="54" gid="34" x="2476" y="955" width="214" height="212"/>
+  <object id="55" gid="35" x="2410" y="2163" width="141" height="141"/>
+  <object id="56" gid="35" x="915" y="1713" width="141" height="141"/>
+  <object id="57" gid="35" x="2375" y="838" width="141" height="141"/>
+  <object id="58" gid="35" x="2017" y="1168" width="141" height="141"/>
+  <object id="59" gid="28" x="2526.15" y="1581.33" width="128" height="128" rotation="9.67622"/>
+  <object id="60" gid="27" x="2554.21" y="2230.3" width="256" height="256" rotation="8.64651"/>
+  <object id="61" gid="34" x="1810" y="1787" width="214" height="212"/>
+  <object id="62" gid="26" x="2536.96" y="1778.07" width="128" height="128" rotation="-6.74418"/>
+  <object id="63" gid="35" x="2009" y="1746" width="141" height="141"/>
+  <object id="64" gid="34" x="861" y="1995" width="214" height="212"/>
+  <object id="65" gid="35" x="2081" y="1283" width="141" height="141"/>
+  <object id="66" gid="35" x="995" y="1765" width="141" height="141"/>
+  <object id="67" gid="34" x="2383" y="1452" width="214" height="212"/>
+  <object id="68" gid="34" x="1210" y="2352" width="214" height="212"/>
+ </objectgroup>
+</map>

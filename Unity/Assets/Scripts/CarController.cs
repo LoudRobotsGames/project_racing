@@ -4,6 +4,7 @@ using System.Collections;
 public class CarController : MonoBehaviour {
 
 	public float[] carMaxSpeeds;
+    public Tire[] tires;
 
 	public AnalogControl analogControl;
 	public Sprite[] carSprites;
@@ -47,8 +48,17 @@ public class CarController : MonoBehaviour {
 	void FixedUpdate () {
 		if (_paused || _stopped) return;
 
+        float carSpeed = _carSpeed;
+        float drag = carSpeed / (tires.Length + 1);
+        for( int i = 0; i < tires.Length; ++i)
+        {
+            if (tires[i].isOnTrack == false)
+            {
+                carSpeed -= drag;
+            }
+        }
 		// Add a vector related to the steering
-		GetComponent<Rigidbody2D>().velocity = analogControl.GetNormalizedSteering () * _carSpeed;
+		GetComponent<Rigidbody2D>().velocity = analogControl.GetNormalizedSteering () * carSpeed;
 
 		// Turn towards the direction we're traveling
 		if (GetComponent<Rigidbody2D>().velocity.magnitude > 0.4f) {

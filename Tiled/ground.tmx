@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="130" tileheight="130" nextobjectid="1">
+ <tileset firstgid="1" source="../../../Unity/project_racing/Tiled/spritesheet_tiles.tsx"/>
+ <tileset firstgid="466" name="ground" tilewidth="128" tileheight="128" spacing="2" margin="1" tilecount="64" columns="8">
+  <image source="ground.png" width="1040" height="1040"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="8" height="8">
+  <data encoding="csv">
+39,8,441,448,417,356,0,0,
+318,287,256,263,232,201,0,0,
+163,132,101,108,77,46,0,0,
+380,349,70,325,294,15,0,0,
+225,194,0,170,139,0,0,0,
+38,7,410,69,0,0,0,0,
+317,286,255,379,348,0,0,0,
+162,131,100,224,193,0,0,0
+</data>
+ </layer>
+</map>

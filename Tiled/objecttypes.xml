@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="Road_Track" color="#a0a0a4">
+  <property name="unity:isTrigger" type="string" default="true"/>
+ </objecttype>
+</objecttypes>
