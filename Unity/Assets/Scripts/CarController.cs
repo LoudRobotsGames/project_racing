@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CarController : MonoBehaviour {
-
+public class CarController : MonoBehaviour
+{
 	public float[] carMaxSpeeds;
     public Tire[] tires;
+    public CarStyle carStyle = CarStyle.Car5;
+    public CarColor carColor = CarColor.Blue;
 
 	public AnalogControl analogControl;
-	public Sprite[] carSprites;
 	public AudioClip[] soundEffects;
 
 	private float _carSpeed;
@@ -26,13 +27,26 @@ public class CarController : MonoBehaviour {
 
 
 	public void SetCarChoice (int carNum, bool isMultiplayer) {
-		GetComponent<SpriteRenderer>().sprite = carSprites[carNum-1];
 		if (isMultiplayer) {
 			// Car choice has only a visual effect in multiplayer games
 			_carSpeed = carMaxSpeeds[0];
 		} else {
 			_carSpeed = carMaxSpeeds [carNum - 1];
 		}
+        CarData data = CarDataLookup.Instance.FindCarData(carStyle);
+        if (data != null)
+        {
+            SpriteRenderer visual = GetComponentInChildren<SpriteRenderer>();
+            if (visual)
+            {
+                visual.sprite = data.GetVisual(carColor);
+            }
+            PolygonCollider2D collider = GetComponentInChildren<PolygonCollider2D>();
+            if (collider != null)
+            {
+                collider.SetPath(0, data.points.ToArray());
+            }
+        }
 	}
 
 	public void PlaySoundForLapFinished() {

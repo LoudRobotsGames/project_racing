@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feccdb8bbb106b04b9f039f0b2df5fb0, type: 3}
+  m_Name: Car1
+  m_EditorClassIdentifier: 
+  red: {fileID: 21300000, guid: 36aee15e5573f724bbfe0f41943b2c35, type: 3}
+  blue: {fileID: 21300000, guid: a05062d380cd09949b877600606134c7, type: 3}
+  green: {fileID: 21300000, guid: bea2b52772fea7e46bb8ae6b89932e8d, type: 3}
+  yellow: {fileID: 21300000, guid: c9f7690dd65250f49958d30240c7c5ec, type: 3}
+  black: {fileID: 21300000, guid: 28fb19a97c7e84141be7dccd58e0b12c, type: 3}
+  points:
+  - {x: 0.2318874, y: 0.6004936}
+  - {x: -0.2318874, y: 0.6004936}
+  - {x: -0.3004937, y: 0.520331}
+  - {x: -0.2767718, y: -0.005246327}
+  - {x: -0.3119687, y: -0.4945122}
+  - {x: -0.2161497, y: -0.5890186}
+  - {x: 0.2161497, y: -0.5890186}
+  - {x: 0.3119687, y: -0.4945122}
+  - {x: 0.2796701, y: -0.005246327}
+  - {x: 0.3004937, y: 0.520331}

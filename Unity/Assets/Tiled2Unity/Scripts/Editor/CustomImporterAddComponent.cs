@@ -15,7 +15,12 @@ class CustomImporterAddComponent : Tiled2Unity.ICustomTiledImporter
             {
                 string type = props["AddComp"];
                 Type T = TypeMapping.GetType(type);
-                gameObject.AddComponent(T);
+                Component comp = gameObject.AddComponent(T);
+                ITiledComponent tiledComponent = comp as ITiledComponent;
+                if (tiledComponent != null)
+                {
+                    tiledComponent.SetupFromProperties(props);
+                }
             }
             catch( Exception e)
             {

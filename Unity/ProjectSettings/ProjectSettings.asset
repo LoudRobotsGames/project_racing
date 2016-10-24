@@ -167,7 +167,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/rogue/.android/debug.keystore
+  AndroidKeystoreName: 
   AndroidKeyaliasName: androiddebugkey
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 
     private const float BROADCAST_INTERVAL = 0.16f;
     public GameObject opponentPrefab;
-    public Vector2[] _startingPoints;
 
     private bool _multiplayerReady;
     private string _myParticipantId;
@@ -18,8 +17,6 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 	public GameObject myCar;
 	public GuiController guiObject;
 	public GUISkin guiSkin;
-	public GameObject background;
-	public Sprite[] backgroundSprites;
 	public float[] startTimesPerLevel;
 	public int[] lapsPerLevel;
 
@@ -36,25 +33,37 @@ public class GameController : MonoBehaviour, MPUpdateListener {
     public float timeOutThreshold = 5.0f;
     private float _timeOutCheckInterval = 1.0f;
     private float _nextTimeoutCheck = 0.0f;
+    private RaceTrackController _trackController;
 
     // Use this for initialization
     void Start () {
+        _trackController = FindObjectOfType<RaceTrackController>();
+
 		RetainedUserPicksScript userPicksScript = RetainedUserPicksScript.Instance;
 		_multiplayerGame = userPicksScript.multiplayerGame;
 		if (! _multiplayerGame) {
-			// Can we get the car number from the previous menu?
-			myCar.GetComponent<CarController>().SetCarChoice(userPicksScript.carSelected, false);
-			// Set our time left and laps remaining
-			_timeLeft = startTimesPerLevel[userPicksScript.diffSelected];
-			_lapsRemaining = lapsPerLevel[userPicksScript.diffSelected];
-
-			guiObject.SetTime (_timeLeft);
-			guiObject.SetLaps (_lapsRemaining);
+            SetupSinglePlayerGame();
 		} else {
             SetupMultiplayerGame();
 		}
 
 	}
+
+    void SetupSinglePlayerGame()
+    {
+        RetainedUserPicksScript userPicksScript = RetainedUserPicksScript.Instance;
+
+        // Can we get the car number from the previous menu?
+        myCar.GetComponent<CarController>().SetCarChoice(userPicksScript.carSelected, false);
+        // Set our time left and laps remaining
+        _timeLeft = startTimesPerLevel[userPicksScript.diffSelected];
+        _lapsRemaining = lapsPerLevel[userPicksScript.diffSelected];
+
+        guiObject.SetTime(_timeLeft);
+        guiObject.SetLaps(_lapsRemaining);
+
+        myCar.transform.position = _trackController.SpawnPoint(0);
+    }
 
     void SetupMultiplayerGame() {
         MultiplayerController.Instance.updateListener = this;
@@ -67,7 +76,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
             string nextParticipantId = allPlayers[i].ParticipantId;
             _finishTimes[nextParticipantId] = -1;
             Debug.Log("Setting up car for " + nextParticipantId);
-            Vector3 carStartPoint = _startingPoints[i];
+            Vector3 carStartPoint = _trackController.SpawnPoint(i);
             if (nextParticipantId == _myParticipantId)
             {
                 myCar.GetComponent<CarController>().SetCarChoice(i + 1, true);
@@ -146,6 +155,16 @@ public class GameController : MonoBehaviour, MPUpdateListener {
         }
     }
 	
+    void DoSinglePlayerUpdate()
+    {
+        _timeLeft -= Time.deltaTime;
+        guiObject.SetTime(_timeLeft);
+        if (_timeLeft <= 0)
+        {
+            ShowGameOver(false);
+        }
+    }
+
 	void Update () {
 		if (_paused) {
 			return;
@@ -154,11 +173,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 		if (_multiplayerGame) {
             DoMultiplayerUpdate();
 		} else {
-			_timeLeft -= Time.deltaTime;
-			guiObject.SetTime (_timeLeft);
-			if (_timeLeft <= 0) {
-				ShowGameOver (false);
-			}
+            DoSinglePlayerUpdate();
 		}
 
 		float carAngle = Mathf.Atan2 (myCar.transform.position.y, myCar.transform.position.x) + Mathf.PI;

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AnalogControl : MonoBehaviour {
 
+    public float padBufferPercent = 0.9f;
 	public GameObject basePad;
 	public GameObject steeringKnob;
 
@@ -18,7 +19,7 @@ public class AnalogControl : MonoBehaviour {
 		// A bit of a hack to make sure the gamepad is on screen for short devices like the iPad
 		
 		
-		float padWidth = basePad.GetComponent<SpriteRenderer>().GetComponent<Renderer>().bounds.size.x;
+		float padWidth = basePad.GetComponent<SpriteRenderer>().GetComponent<Renderer>().bounds.size.x * padBufferPercent;
 		Vector3 padLeft = Camera.main.WorldToViewportPoint(basePad.transform.position - new Vector3(padWidth, 0, 0));
 		Vector3 padRight = Camera.main.WorldToViewportPoint(basePad.transform.position + new Vector3(padWidth, 0, 0));
 		
@@ -30,7 +31,7 @@ public class AnalogControl : MonoBehaviour {
 		
 		    
 		            
-		_maxRadius = basePad.GetComponent<Renderer>().bounds.size.x / 2;
+		_maxRadius = (basePad.GetComponent<Renderer>().bounds.size.x / 2) * 0.75f;
 		_calibration = new Vector3 (0.0f, -0.6f, 0.0f);
 		// Only considering these two platforms for now
 		_onMobile = (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer);
@@ -78,26 +79,23 @@ public class AnalogControl : MonoBehaviour {
 			steeringKnob.transform.localPosition = Vector3.Lerp(steeringKnob.transform.localPosition, Vector3.zero, 12 * Time.deltaTime);
 		}
 
-		// If we're on mobile and not using the joystick, use the tilt sensor!
-		/*if (!_isUsingPad && _onMobile) {
-
-			steeringKnob.transform.localPosition = Vector3.Lerp(steeringKnob.transform.localPosition, Vector3.zero, 12 * Time.deltaTime);
-
-			// We're on mobile. Let's grab the acceleration data!
-			float xVal = (Input.acceleration.x - _calibration.x) * _tiltMultiplier;
-			float yVal = (Input.acceleration.y - _calibration.y) * _tiltMultiplier;
-
-			// A bit of a hack to workaround the fact that we have .4 movement in one direction and .6 movement in the other
-			if (Input.acceleration.y < _calibration.y) {
-				yVal /= (_calibration.y +1);
-			} else {
-				yVal /= -(_calibration.y);
-			}
-			_direction = new Vector2(xVal, yVal);
-			_direction = Vector2.ClampMagnitude(_direction, 1.0f);
-		}*/
-		
-		
-
+        if (!_isUsingPad && !_onMobile)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            if (x != 0 || y != 0)
+            {
+                _direction.Set(x, y);
+                if (_direction.SqrMagnitude() > 1f)
+                {
+                    _direction.Normalize();
+                }
+            }
+            else
+            {
+                steeringKnob.transform.localPosition = Vector3.Lerp(steeringKnob.transform.localPosition, Vector3.zero, 12 * Time.deltaTime);
+            }
+            steeringKnob.transform.localPosition = _direction * _maxRadius;
+        }
 	}
 }

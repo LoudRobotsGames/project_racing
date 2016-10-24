@@ -3,8 +3,6 @@ using System.Collections;
 
 public class OpponentCarController : MonoBehaviour
 {
-    public Sprite[] carSprites;
-
     private Vector3 _startPos;
     private Vector3 _destinationPos;
     private Quaternion _startRot;
@@ -26,7 +24,7 @@ public class OpponentCarController : MonoBehaviour
 
     public void SetCarNumber(int carNum)
     {
-        GetComponent<SpriteRenderer>().sprite = carSprites[carNum - 1];
+        //GetComponent<SpriteRenderer>().sprite = carSprites[carNum - 1];
     }
 
     public void SetCarInformation(int messageNum, float posX, float posY, float velX, float velY, float rotZ)
