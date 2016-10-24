@@ -533,6 +533,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010118602822, guid: 412baebe2bb07fd48bb192ec0f0bebb7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 412baebe2bb07fd48bb192ec0f0bebb7, type: 2}
   m_IsPrefabParent: 0
@@ -965,12 +969,12 @@ Prefab:
     - target: {fileID: 114000013435192080, guid: c4eb3ed72d54bf64a81dcd398e648cb0,
         type: 2}
       propertyPath: carStyle
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000013435192080, guid: c4eb3ed72d54bf64a81dcd398e648cb0,
         type: 2}
       propertyPath: carColor
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4eb3ed72d54bf64a81dcd398e648cb0, type: 2}

@@ -33,6 +33,10 @@ public class CarDataLookup : MonoBehaviour
 
     public CarData FindCarData(CarStyle style)
     {
+        if (style == CarStyle.Any)
+        {
+            style = (CarStyle)UnityEngine.Random.Range(0, 5);
+        }
         string lookup = style.ToString();
         if (_dataLookup.ContainsKey(lookup))
         {
@@ -44,11 +48,12 @@ public class CarDataLookup : MonoBehaviour
 
 public enum CarStyle
 {
-    Car1 = 0,
+    Car1,
     Car2,
     Car3,
     Car4,
-    Car5
+    Car5,
+    Any
 }
 
 public enum CarColor
@@ -57,6 +62,7 @@ public enum CarColor
     Blue,
     Green,
     Yellow,
-    Black
+    Black,
+    Any
 }
 

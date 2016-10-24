@@ -16,6 +16,10 @@ public class CarData : ScriptableObject
 
     public Sprite GetVisual(CarColor color)
     {
+        if( color == CarColor.Any)
+        {
+            color = (CarColor)UnityEngine.Random.Range(0, 5);
+        }
         switch (color)
         {
             case CarColor.Red:
