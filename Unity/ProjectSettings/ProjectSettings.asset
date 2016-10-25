@@ -167,7 +167,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
+  AndroidKeystoreName: C:/Development/Unity/project_racing/Unity/debug.keystore
   AndroidKeyaliasName: androiddebugkey
   AndroidTVCompatibility: 1
   AndroidIsGame: 1

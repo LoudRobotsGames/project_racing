@@ -66,14 +66,14 @@ public class GameController : MonoBehaviour, MPUpdateListener {
     }
 
     void SetupMultiplayerGame() {
-        MultiplayerController.Instance.updateListener = this;
-        _myParticipantId = MultiplayerController.Instance.GetMyParticipantId();
-        List<Participant> allPlayers = MultiplayerController.Instance.GetAllPlayers();
+        NetworkProvider.Instance.updateListener = this;
+        _myParticipantId = NetworkProvider.Instance.GetMyPlayerId();
+        List<NetworkPlayer> allPlayers = NetworkProvider.Instance.GetAllPlayers();
         _opponentScripts = new Dictionary<string, OpponentCarController>(allPlayers.Count - 1);
         _finishTimes = new Dictionary<string, float>(allPlayers.Count);
         for (int i = 0; i < allPlayers.Count; i++)
         {
-            string nextParticipantId = allPlayers[i].ParticipantId;
+            string nextParticipantId = allPlayers[i].PlayerId;
             _finishTimes[nextParticipantId] = -1;
             Debug.Log("Setting up car for " + nextParticipantId);
             Vector3 carStartPoint = _trackController.SpawnPoint(i);
@@ -124,14 +124,20 @@ public class GameController : MonoBehaviour, MPUpdateListener {
                 gameOvertext
             );
 		}
-        if (GUI.Button(new Rect(0.0f, 0.0f, Screen.width * 0.1f, Screen.height * 0.1f), "Quit"))
+        if (NetworkProvider.Instance != null)
         {
-            MultiplayerController.Instance.LeaveGame();
+            if (GUI.Button(new Rect(0.0f, 0.0f, Screen.width * 0.1f, Screen.height * 0.1f), "Quit"))
+            {
+                NetworkProvider.Instance.LeaveGame();
+            }
         }
 	}
     
     
     void DoMultiplayerUpdate() {
+        if (NetworkProvider.Instance == null)
+            return;
+
         // In a multiplayer game, time counts up!
         _timePlayed += Time.deltaTime;
         guiObject.SetTime(_timePlayed);
@@ -146,7 +152,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
         {
             Transform transform = myCar.GetComponent<Transform>();
             Rigidbody2D rigidbody2D = myCar.GetComponent<Rigidbody2D>();
-            MultiplayerController.Instance.SendMyUpdate(
+            NetworkProvider.Instance.SendMyUpdate(
                 transform.position.x,
                 transform.position.y,
                 rigidbody2D.velocity,
@@ -188,11 +194,11 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 				if (_lapsRemaining <= 0) {
 					if (_multiplayerGame) {
                         myCar.GetComponent<CarController>().Stop();
-                        MultiplayerController.Instance.SendMyUpdate(myCar.transform.position.x,
+                        NetworkProvider.Instance.SendMyUpdate(myCar.transform.position.x,
                             myCar.transform.position.y,
                             new Vector2(0, 0),
                             myCar.transform.rotation.eulerAngles.z);
-                        MultiplayerController.Instance.SendFinishMessage(_timePlayed);
+                        NetworkProvider.Instance.SendFinishMessage(_timePlayed);
                         PlayerFinished(_myParticipantId, _timePlayed);
 					} else {
 						ShowGameOver(true);
@@ -226,7 +232,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 
     public void LeftRoomConfirmed()
     {
-        MultiplayerController.Instance.updateListener = null;
+        NetworkProvider.Instance.updateListener = null;
         Application.LoadLevel("MainMenu");
     }
 
@@ -252,7 +258,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 
     public void LeaveMPGame()
     {
-        MultiplayerController.Instance.LeaveGame();
+        NetworkProvider.Instance.LeaveGame();
     }
 
     public void PlayerLeftRoom(string participantId)
