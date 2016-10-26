@@ -6,7 +6,7 @@ using System;
 public class TrafficCone : MonoBehaviour
 {
     public float drag = 4f;
-    public float angularDrag = 1f;
+    public float angularDrag = 2f;
     // Use this for initialization
     void Start()
     {

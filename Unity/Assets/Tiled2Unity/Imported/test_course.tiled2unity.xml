@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 10/24/2016 12:18:24 AM-->
+<!--Last exported: 10/25/2016 11:44:49 PM-->
 <Tiled2Unity version="1.0.7.10">
   <AssignMaterial mesh="mesh_0001" material="map2" />
   <AssignMaterial mesh="mesh_0002" material="map2" />
@@ -465,53 +465,69 @@
         </GameObject>
       </GameObject>
     </GameObject>
-    <GameObject name="Navigation" x="0" y="0" z="0">
-      <GameObject name="TileObject" x="22.7863979" y="-8.71182" rotation="-630" layer="" scaleX="1" scaleY="1">
+    <GameObject name="Navigation" x="0" y="0" z="0" layer="Navigation">
+      <GameObject name="TileObject" x="22.7863979" y="-8.71182" rotation="-630" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="18.97" y="-9.21" rotation="-360" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="18.97" y="-9.21" rotation="-360" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="19.4499989" y="-14.32" rotation="-90" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="19.4499989" y="-14.32" rotation="-90" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="7.4266696" y="-14.33" rotation="-1080" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="7.4266696" y="-14.33" rotation="-1080" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="12.8848" y="-20.1318" rotation="-930" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="22.7908" y="-15.110899" rotation="-630" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="18.17" y="-20.223299" rotation="-900" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="12.8848" y="-20.1318" rotation="-930" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="23.275" y="-21.51" rotation="-900" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="18.17" y="-20.223299" rotation="-900" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="10.49" y="-21.5108" rotation="-900" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="23.275" y="-21.51" rotation="-900" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="20.8065" y="-21.6735" rotation="-870" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="10.49" y="-21.5108" rotation="-900" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>
       </GameObject>
-      <GameObject name="TileObject" x="7.93" y="-22.0124989" rotation="-1170" layer="" scaleX="1" scaleY="1">
+      <GameObject name="TileObject" x="20.8065" y="-21.6735" rotation="-870" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
+        <GameObject name="TileObject">
+          <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
+        </GameObject>
+      </GameObject>
+      <GameObject name="TileObject" x="7.93" y="-22.0124989" rotation="-1170" scaleX="1" scaleY="1">
+        <Property name="AddComp" value="TrackNavigation" />
         <GameObject name="TileObject">
           <GameObject name="tile_obj" copy="mesh_tile_0045" sortingLayerName="" sortingOrder="5" x="0" y="0.5" />
         </GameObject>

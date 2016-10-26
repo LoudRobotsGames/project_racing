@@ -8,6 +8,7 @@ public static class TypeMapping
     private static int TrafficConeHash = "TrafficCone".GetHashCode();
     private static int StartPointHash = "StartPoint".GetHashCode();
     private static int RaceTrackControllerHash = "RaceTrackController".GetHashCode();
+    private static int TrackNavigationHash = "TrackNavigation".GetHashCode();
 
     public static Type GetType(String type)
     {
@@ -17,6 +18,8 @@ public static class TypeMapping
             return typeof(TrafficCone);
         else if (hash == StartPointHash)
             return typeof(StartPoint);
+        else if (hash == TrackNavigationHash)
+            return typeof(TrackNavigation);
         else if (hash == RaceTrackControllerHash)
             return typeof(RaceTrackController);
 
