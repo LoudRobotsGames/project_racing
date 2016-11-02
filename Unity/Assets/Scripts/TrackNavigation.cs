@@ -5,7 +5,10 @@ using System.Collections;
 public class TrackNavigation : MonoBehaviour
 {
     public const int MAX_RAY_LENGTH = 12;
+    public TrackNavigation previousNavigationLink;
     public TrackNavigation nextNavigationLink;
+    public bool crossesFinishLine = false;
+    public int index = -1;
 
     public Vector2 centerOffset
     {
@@ -16,7 +19,13 @@ public class TrackNavigation : MonoBehaviour
     }
     [SerializeField]
     private Vector3 _centerOffset;
-
+    public Vector3 position
+    {
+        get
+        {
+            return transform.TransformPoint(_centerOffset);
+        }
+    }
 
     public void OnDrawGizmos()
     {
@@ -27,8 +36,14 @@ public class TrackNavigation : MonoBehaviour
         }
         else
         {
+            Color c = Gizmos.color;
+            if (crossesFinishLine)
+            {
+                Gizmos.color = Color.red;
+            }
             Vector3 otherPosition = nextNavigationLink.transform.TransformPoint(_centerOffset);
             Gizmos.DrawLine(position, otherPosition);
+            Gizmos.color = c;
         }
     }
 }

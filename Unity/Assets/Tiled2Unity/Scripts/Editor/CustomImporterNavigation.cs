@@ -5,6 +5,9 @@ using System;
 [Tiled2Unity.CustomTiledImporter]
 class CustomImporterNavigation : Tiled2Unity.ICustomTiledImporter
 {
+    private const float TRIGGER_SIZE = 2f;
+    private const float TRIGGER_OFFSET = 0.25f;
+
     public void HandleCustomProperties(UnityEngine.GameObject gameObject,
         IDictionary<string, string> props)
     {
@@ -20,14 +23,15 @@ class CustomImporterNavigation : Tiled2Unity.ICustomTiledImporter
             Debug.Log("Navigation: " + nav.ToString());
             nav.gameObject.name = "Navigation_" + i++;
             BoxCollider2D collider = nav.gameObject.AddComponent<BoxCollider2D>();
-            collider.size = new Vector2(0.5f, 0.5f);
-            collider.offset = new Vector2(0.25f, 0.25f);
+            collider.isTrigger = true;
+            collider.size = new Vector2(TRIGGER_SIZE, TRIGGER_SIZE);
+            collider.offset = new Vector2(TRIGGER_OFFSET, TRIGGER_OFFSET);
             nav.centerOffset = collider.offset;
         }
 
         foreach (TrackNavigation nav in navList)
         {
-            Vector3 position = nav.gameObject.transform.TransformPoint(new Vector3(0.25f, 0.25f));
+            Vector3 position = nav.position;
             Vector3 dir = nav.gameObject.transform.right;
 
             bool origFlag = Physics2D.queriesStartInColliders;
@@ -39,6 +43,13 @@ class CustomImporterNavigation : Tiled2Unity.ICustomTiledImporter
                 if (other != null)
                 {
                     nav.nextNavigationLink = other;
+                    other.previousNavigationLink = nav;
+                    float distance = Vector3.Distance(position, other.position);
+                    hit = Physics2D.Raycast(position, dir, distance, 1 << LayerMask.NameToLayer("FinishLine"));
+                    if (hit.collider != null)
+                    {
+                        nav.crossesFinishLine = true;
+                    }
                 }
             }
             Physics2D.queriesStartInColliders = origFlag;

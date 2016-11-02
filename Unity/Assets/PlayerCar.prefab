@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000012260111454}
   - 114: {fileID: 114000011611154706}
   - 58: {fileID: 58000013840082544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tire (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - 4: {fileID: 4000013647708976}
   - 114: {fileID: 114000012898733434}
   - 58: {fileID: 58000011383998500}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tire (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - 4: {fileID: 4000014196851726}
   - 114: {fileID: 114000012763960924}
   - 58: {fileID: 58000011648488932}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tire (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - 4: {fileID: 4000010282478286}
   - 114: {fileID: 114000013234393748}
   - 58: {fileID: 58000012803082638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tire (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - 4: {fileID: 4000011551967354}
   - 212: {fileID: 212000011720508792}
   - 60: {fileID: 60000012109454758}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,6 +434,9 @@ MonoBehaviour:
   - {fileID: 114000012763960924}
   - {fileID: 114000012898733434}
   - {fileID: 114000011611154706}
+  id: 
+  carStyle: 4
+  carColor: 1
   analogControl: {fileID: 0}
   soundEffects:
   - {fileID: 8300000, guid: f3d358355433548d098c98bd3ae863f8, type: 3}

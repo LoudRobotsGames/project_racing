@@ -5,11 +5,13 @@ using System;
 
 public class GameController : MonoBehaviour, MPUpdateListener {
 
+    public static int FINISH_LINE_LAYER = -1;
+
     private const float BROADCAST_INTERVAL = 0.16f;
     public GameObject opponentPrefab;
 
     private bool _multiplayerReady;
-    private string _myParticipantId;
+    private string _myParticipantId = "player";
     private Dictionary<string, OpponentCarController> _opponentScripts;
     private Dictionary<string, float> _finishTimes;
     private float _nextBroadcastTime = 0;
@@ -36,8 +38,13 @@ public class GameController : MonoBehaviour, MPUpdateListener {
     private RaceTrackController _trackController;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        FINISH_LINE_LAYER = LayerMask.NameToLayer("FinishLine");
+
         _trackController = FindObjectOfType<RaceTrackController>();
+        _trackController.onLapFinished = OnLapFinished;
+        _trackController.onRaceFinished = OnRaceFinished;
 
 		RetainedUserPicksScript userPicksScript = RetainedUserPicksScript.Instance;
 		_multiplayerGame = userPicksScript.multiplayerGame;
@@ -46,21 +53,52 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 		} else {
             SetupMultiplayerGame();
 		}
-
 	}
+
+    private void OnLapFinished(string id)
+    {
+        if (id == _myParticipantId)
+        {
+            _lapsRemaining -= 1;
+            Debug.Log("Next lap finished!");
+            guiObject.SetLaps(_lapsRemaining);
+            myCar.GetComponent<CarController>().PlaySoundForLapFinished();
+        }
+    }
+
+    private void OnRaceFinished(string id)
+    {
+        if (_multiplayerGame)
+        {
+            myCar.GetComponent<CarController>().Stop();
+            NetworkProvider.Instance.SendMyUpdate(myCar.transform.position.x,
+                myCar.transform.position.y,
+                new Vector2(0, 0),
+                myCar.transform.rotation.eulerAngles.z);
+            NetworkProvider.Instance.SendFinishMessage(_timePlayed);
+            PlayerFinished(_myParticipantId, _timePlayed);
+        }
+        else {
+            ShowGameOver(true);
+        }
+    }
 
     void SetupSinglePlayerGame()
     {
         RetainedUserPicksScript userPicksScript = RetainedUserPicksScript.Instance;
 
         // Can we get the car number from the previous menu?
-        myCar.GetComponent<CarController>().SetCarChoice(userPicksScript.carSelected, false);
+        CarController car = myCar.GetComponent<CarController>();
+        car.SetCarChoice(userPicksScript.carSelected, false);
+        car.id = _myParticipantId;
+        
         // Set our time left and laps remaining
         _timeLeft = startTimesPerLevel[userPicksScript.diffSelected];
         _lapsRemaining = lapsPerLevel[userPicksScript.diffSelected];
 
         guiObject.SetTime(_timeLeft);
         guiObject.SetLaps(_lapsRemaining);
+        _trackController.targetLaps = _lapsRemaining;
 
         myCar.transform.position = _trackController.SpawnPoint(0);
     }
@@ -181,32 +219,6 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 		} else {
             DoSinglePlayerUpdate();
 		}
-
-		float carAngle = Mathf.Atan2 (myCar.transform.position.y, myCar.transform.position.x) + Mathf.PI;
-		if (carAngle >= _nextCarAngleTarget && (carAngle - _nextCarAngleTarget) < Mathf.PI / 4) {
-			_nextCarAngleTarget += Mathf.PI / 2;
-			if (Mathf.Approximately(_nextCarAngleTarget, 2*Mathf.PI)) _nextCarAngleTarget = 0;
-			if (Mathf.Approximately(_nextCarAngleTarget, FINISH_TARGET)) {
-				_lapsRemaining -= 1;
-				Debug.Log("Next lap finished!");
-				guiObject.SetLaps (_lapsRemaining);
-				myCar.GetComponent<CarController>().PlaySoundForLapFinished();
-				if (_lapsRemaining <= 0) {
-					if (_multiplayerGame) {
-                        myCar.GetComponent<CarController>().Stop();
-                        NetworkProvider.Instance.SendMyUpdate(myCar.transform.position.x,
-                            myCar.transform.position.y,
-                            new Vector2(0, 0),
-                            myCar.transform.rotation.eulerAngles.z);
-                        NetworkProvider.Instance.SendFinishMessage(_timePlayed);
-                        PlayerFinished(_myParticipantId, _timePlayed);
-					} else {
-						ShowGameOver(true);
-					}
-				}
-			}
-		}
-
 	}
 
     public void UpdateReceived(string senderId, int messageNum, float posX, float posY, float velX, float velY, float rotZ)
