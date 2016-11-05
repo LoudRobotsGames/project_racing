@@ -5,6 +5,7 @@ using System.Collections;
 public class TrackNavigation : MonoBehaviour
 {
     public const int MAX_RAY_LENGTH = 12;
+    public float navigationRadius = 3f;
     public TrackNavigation previousNavigationLink;
     public TrackNavigation nextNavigationLink;
     public bool crossesFinishLine = false;
@@ -27,6 +28,7 @@ public class TrackNavigation : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     public void OnDrawGizmos()
     {
         Vector3 position = transform.TransformPoint(_centerOffset);
@@ -41,9 +43,11 @@ public class TrackNavigation : MonoBehaviour
             {
                 Gizmos.color = Color.red;
             }
-            Vector3 otherPosition = nextNavigationLink.transform.TransformPoint(_centerOffset);
+            Vector3 otherPosition = nextNavigationLink.position;
             Gizmos.DrawLine(position, otherPosition);
             Gizmos.color = c;
         }
+        UnityEditor.Handles.DrawWireDisc(position, Vector3.forward, navigationRadius);
     }
+#endif
 }

@@ -37,6 +37,11 @@ public class RaceTrackController : MonoBehaviour, ITiledComponent
         for (int i = 0; i < navPoints.Length; ++i)
         {
             _navPoints.Add(navPoints[i]);
+            MeshRenderer r = navPoints[i].GetComponentInChildren<MeshRenderer>();
+            if (r != null)
+            {
+                r.enabled = false;
+            }
             if (navPoints[i].crossesFinishLine)
             {
                 _startingNavLine = navPoints[i];
@@ -67,6 +72,8 @@ public class RaceTrackController : MonoBehaviour, ITiledComponent
         }
 	}
 	
+    public TrackNavigation StartingLink { get { return _startingNavLine; } }
+
     public void CrossFinishLine(CarController car)
     {
         Vector3 heading = car.transform.right;
@@ -115,19 +122,15 @@ public class RaceTrackController : MonoBehaviour, ITiledComponent
             if (nav != null)
             {
                 float distance = Vector3.Distance(position, nav.position);
-                if (distance < minDistance)
+                // Only considered closest IF we are inside the radius
+                if (distance < minDistance && distance < nav.navigationRadius)
                 {
                     minDistance = distance;
                     closest = nav;
                 }
             }
         }
-
-        if (closest != null)
-        {
-            
-        }
-
+        
         return closest;
     }
 }

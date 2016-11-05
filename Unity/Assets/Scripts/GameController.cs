@@ -99,8 +99,8 @@ public class GameController : MonoBehaviour, MPUpdateListener {
         guiObject.SetTime(_timeLeft);
         guiObject.SetLaps(_lapsRemaining);
         _trackController.targetLaps = _lapsRemaining;
-
-        myCar.transform.position = _trackController.SpawnPoint(0);
+        
+        car.SpawnAtStart(0);
     }
 
     void SetupMultiplayerGame() {
@@ -117,8 +117,9 @@ public class GameController : MonoBehaviour, MPUpdateListener {
             Vector3 carStartPoint = _trackController.SpawnPoint(i);
             if (nextParticipantId == _myParticipantId)
             {
-                myCar.GetComponent<CarController>().SetCarChoice(i + 1, true);
-                myCar.transform.position = carStartPoint;
+                CarController car = myCar.GetComponent<CarController>();
+                car.SetCarChoice(i + 1, true);
+                car.SpawnAtStart(i);
             }
             else
             {

@@ -18,6 +18,8 @@ public class OpponentCarController : MonoBehaviour
     {
         _startPos = transform.position;
         _startRot = transform.rotation;
+        _destinationPos = _startPos;
+        _destinationRot = _startRot;
         _lastUpdateTime = Time.time;
         _lastMessageNum = 0;
     }

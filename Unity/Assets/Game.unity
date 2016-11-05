@@ -406,6 +406,27 @@ MonoBehaviour:
   shaderFXAAPreset3: {fileID: 4800000, guid: c182fa94a5a0a4c02870641efcd38cd5, type: 3}
   shaderFXAAII: {fileID: 4800000, guid: cd5b323dcc592457790ff18b528f5e67, type: 3}
   shaderFXAAIII: {fileID: 4800000, guid: c547503fff0e8482ea5793727057041c, type: 3}
+--- !u!1 &290654394 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
+  m_PrefabInternal: {fileID: 2079116095}
+--- !u!50 &290654397
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290654394}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &521613476
 Prefab:
   m_ObjectHideFlags: 0
@@ -661,11 +682,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011315776256, guid: c4eb3ed72d54bf64a81dcd398e648cb0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 4000011315776256, guid: c4eb3ed72d54bf64a81dcd398e648cb0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.16000044
       objectReference: {fileID: 0}
     - target: {fileID: 4000011315776256, guid: c4eb3ed72d54bf64a81dcd398e648cb0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -903,11 +924,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.254
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.059
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -932,6 +953,10 @@ Prefab:
     - target: {fileID: 400000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44e5cdefda6e74fb5b9047b4117b45e8, type: 2}

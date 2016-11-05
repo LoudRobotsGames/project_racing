@@ -42,13 +42,25 @@ class CustomImporterNavigation : Tiled2Unity.ICustomTiledImporter
                 TrackNavigation other = hit.collider.gameObject.GetComponent<TrackNavigation>();
                 if (other != null)
                 {
-                    nav.nextNavigationLink = other;
-                    other.previousNavigationLink = nav;
                     float distance = Vector3.Distance(position, other.position);
                     hit = Physics2D.Raycast(position, dir, distance, 1 << LayerMask.NameToLayer("FinishLine"));
                     if (hit.collider != null)
                     {
-                        nav.crossesFinishLine = true;
+
+                        GameObject go = new GameObject("FinishLine");
+                        go.transform.parent = nav.transform.parent;
+                        go.transform.position = hit.point;
+                        TrackNavigation finish = go.AddComponent<TrackNavigation>();
+                        finish.nextNavigationLink = other;
+                        finish.previousNavigationLink = nav;
+                        nav.nextNavigationLink = finish;
+                        other.previousNavigationLink = finish;
+                        finish.crossesFinishLine = true;
+                    }
+                    else
+                    {
+                        nav.nextNavigationLink = other;
+                        other.previousNavigationLink = nav;
                     }
                 }
             }

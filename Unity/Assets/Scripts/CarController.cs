@@ -27,6 +27,12 @@ public class CarController : MonoBehaviour
         _trackController = FindObjectOfType<RaceTrackController>();
     }
 
+    public void SpawnAtStart(int index)
+    {
+        transform.position = _trackController.SpawnPoint(index);
+        _trackLink = _trackController.StartingLink;
+    }
+
     public void SetPaused(bool isPaused)
     {
         _paused = isPaused;
@@ -98,7 +104,37 @@ public class CarController : MonoBehaviour
     {
         if (_trackController != null)
         {
-            _trackLink = _trackController.GetClosestLink(transform.position);
+            if (_trackLink == null)
+            {
+                return;
+            }
+
+            // Get the distance to the registered link
+            float distance = Vector3.Distance(this.transform.position, _trackLink.position);
+            // Find the closest link if there is one
+            TrackNavigation link = _trackController.GetClosestLink(transform.position);
+            // Is it a different link than the one we have registered?
+            // This only matters if its a non-null link, and we are outside the range of the current link
+            if (link != _trackLink && link != null && distance > _trackLink.navigationRadius)
+            {
+                // Going backwards?
+                if (link.index < lastNavIndex)
+                {
+                    return;
+                }
+                if (link.index > lastNavIndex + 1 && !_trackLink.crossesFinishLine)
+                {
+                    transform.position = _trackLink.previousNavigationLink.position;
+                }
+            }
+            else
+            {
+                if (distance < _trackLink.navigationRadius)
+                {
+                    _trackLink = _trackLink.nextNavigationLink;
+                    lastNavIndex = _trackLink.index;
+                }
+            }
         }
     }
 
@@ -114,6 +150,10 @@ public class CarController : MonoBehaviour
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(transform.position, _trackLink.nextNavigationLink.position);
             }
+            Color old = UnityEditor.Handles.color;
+            UnityEditor.Handles.color = Color.red;
+            UnityEditor.Handles.DrawWireDisc(_trackLink.position, Vector3.forward, _trackLink.navigationRadius * 0.9f);
+            UnityEditor.Handles.color = old;
         }
         
         Gizmos.color = c;
@@ -123,7 +163,14 @@ public class CarController : MonoBehaviour
     {
         if (collision.gameObject.layer == GameController.FINISH_LINE_LAYER)
         {
-            _trackController.CrossFinishLine(this);
+            TrackNavigation link = _trackController.GetClosestLink(transform.position);
+            if (link != null)
+            {
+                if (link.crossesFinishLine && _trackLink.previousNavigationLink == link)
+                {
+                    _trackController.CrossFinishLine(this);
+                }
+            }
         }
     }
 }
