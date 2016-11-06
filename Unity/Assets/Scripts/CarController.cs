@@ -3,14 +3,8 @@ using System.Collections;
 
 public class CarController : VehicleBase
 {
-    public Tire[] tires;
-    public string id;
-
     public AnalogControl analogControl;
     public AudioClip[] soundEffects;
-    
-    private TrackNavigation _trackLink;
-    private int lastNavIndex = 0;
 
     // Use this for initialization
     void Start()
@@ -19,21 +13,9 @@ public class CarController : VehicleBase
         Setup();
     }
 
-    public void SpawnAtStart(int index)
-    {
-        transform.position = _trackController.SpawnPoint(index);
-        _trackLink = _trackController.StartingLink;
-    }
-
     public void PlaySoundForLapFinished()
     {
         AudioSource.PlayClipAtPoint(soundEffects[0], transform.position);
-    }
-
-    public void Stop()
-    {
-        _stopped = true;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     void FixedUpdate()

@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class VehicleBase : MonoBehaviour
 {
+    public Tire[] tires;
+    public string id;
+
     public static float DEFAULT_MAX_SPEED = 5f;
     public CarStyle carStyle = CarStyle.Car5;
     public CarColor carColor = CarColor.Blue;
@@ -16,10 +19,18 @@ public class VehicleBase : MonoBehaviour
     protected bool _stopped = false;
 
     protected RaceTrackController _trackController;
+    protected TrackNavigation _trackLink;
+    protected int lastNavIndex = 0;
 
     protected void Setup()
     {
         _trackController = FindObjectOfType<RaceTrackController>();
+    }
+
+    public void SpawnAtStart(int index)
+    {
+        transform.position = _trackController.SpawnPoint(index);
+        _trackLink = _trackController.StartingLink;
     }
 
     public void SetCarChoice(int carNum, bool isMultiplayer)

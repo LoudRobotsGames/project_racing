@@ -613,7 +613,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567304816
@@ -808,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lapText: {fileID: 2119614558}
   timeText: {fileID: 1842743700}
+  _centerNotification: {fileID: 567304816}
 --- !u!1 &1279559041 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011138913246, guid: c4eb3ed72d54bf64a81dcd398e648cb0,

@@ -31,21 +31,25 @@ public class IntroCountdownRules : GameRules
         WaitForSeconds wait = new WaitForSeconds(1f);
 
         // Three
+        GuiController.Instance.ShowNotification("3", 1f);
         playbackSource.clip = three;
         playbackSource.Play();
         yield return wait;
 
         // Two
+        GuiController.Instance.ShowNotification("2", 1f);
         playbackSource.clip = two;
         playbackSource.Play();
         yield return wait;
 
         // One
+        GuiController.Instance.ShowNotification("1", 1f);
         playbackSource.clip = one;
         playbackSource.Play();
         yield return wait;
 
         // GO
+        GuiController.Instance.ShowNotification("GO!", 1f);
         playbackSource.clip = go;
         playbackSource.Play();
 
