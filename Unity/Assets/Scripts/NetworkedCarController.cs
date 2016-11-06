@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OpponentCarController : MonoBehaviour
+public class NetworkedCarController : VehicleBase
 {
     private Vector3 _startPos;
     private Vector3 _destinationPos;
@@ -22,11 +22,17 @@ public class OpponentCarController : MonoBehaviour
         _destinationRot = _startRot;
         _lastUpdateTime = Time.time;
         _lastMessageNum = 0;
+
+        Setup();
+
+        carStyle = CarStyle.Any;
+        carColor = CarColor.Any;
+
+        SetCarChoice(0, true);
     }
 
     public void SetCarNumber(int carNum)
     {
-        //GetComponent<SpriteRenderer>().sprite = carSprites[carNum - 1];
     }
 
     public void SetCarInformation(int messageNum, float posX, float posY, float velX, float velY, float rotZ)

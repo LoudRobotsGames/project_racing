@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using GooglePlayGames.BasicApi.Multiplayer;
 using System;
 
-public class GameController : MonoBehaviour, MPUpdateListener {
+public class GameController : MonoBehaviour, MPUpdateListener
+{
+    private static GameController _instance = null;
+    public static GameController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameController>();
+            }
+            return _instance;
+        }
+    }
 
     public static int FINISH_LINE_LAYER = -1;
 
@@ -12,7 +25,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 
     private bool _multiplayerReady;
     private string _myParticipantId = "player";
-    private Dictionary<string, OpponentCarController> _opponentScripts;
+    private Dictionary<string, NetworkedCarController> _opponentScripts;
     private Dictionary<string, float> _finishTimes;
     private float _nextBroadcastTime = 0;
 
@@ -21,8 +34,10 @@ public class GameController : MonoBehaviour, MPUpdateListener {
 	public GUISkin guiSkin;
 	public float[] startTimesPerLevel;
 	public int[] lapsPerLevel;
+    public AudioSource SFXPlaybackSource;
+    public GameRules rules;
 
-	public bool _paused;
+    public bool _paused;
 	private float _timeLeft;
 	private float _timePlayed;
 	private int _lapsRemaining;
@@ -101,13 +116,18 @@ public class GameController : MonoBehaviour, MPUpdateListener {
         _trackController.targetLaps = _lapsRemaining;
         
         car.SpawnAtStart(0);
+
+        if (rules != null)
+        {
+            rules.Begin();
+        }
     }
 
     void SetupMultiplayerGame() {
         NetworkProvider.Instance.updateListener = this;
         _myParticipantId = NetworkProvider.Instance.GetMyPlayerId();
         List<NetworkPlayer> allPlayers = NetworkProvider.Instance.GetAllPlayers();
-        _opponentScripts = new Dictionary<string, OpponentCarController>(allPlayers.Count - 1);
+        _opponentScripts = new Dictionary<string, NetworkedCarController>(allPlayers.Count - 1);
         _finishTimes = new Dictionary<string, float>(allPlayers.Count);
         for (int i = 0; i < allPlayers.Count; i++)
         {
@@ -124,7 +144,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
             else
             {
                 GameObject opponentCar = (Instantiate(opponentPrefab, carStartPoint, Quaternion.identity) as GameObject);
-                OpponentCarController opponentScript = opponentCar.GetComponent<OpponentCarController>();
+                NetworkedCarController opponentScript = opponentCar.GetComponent<NetworkedCarController>();
                 opponentScript.SetCarNumber(i + 1);
                 _opponentScripts[nextParticipantId] = opponentScript;
             }
@@ -226,7 +246,7 @@ public class GameController : MonoBehaviour, MPUpdateListener {
     {
         if (_multiplayerReady)
         {
-            OpponentCarController opponent = _opponentScripts[senderId];
+            NetworkedCarController opponent = _opponentScripts[senderId];
             if (opponent != null)
             {
                 opponent.SetCarInformation(messageNum, posX, posY, velX, velY, rotZ);

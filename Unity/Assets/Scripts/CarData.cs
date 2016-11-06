@@ -13,6 +13,7 @@ public class CarData : ScriptableObject
     public Sprite yellow;
     public Sprite black;
     public List<Vector2> points;
+    public float[] maxSpeeds;
 
     public Sprite GetVisual(CarColor color)
     {
@@ -32,5 +33,15 @@ public class CarData : ScriptableObject
                 return yellow;
         }
         return black;
+    }
+
+    public float GetMaxSpeed(int upgrade)
+    {
+        if (upgrade < 0 || upgrade >= maxSpeeds.Length)
+        {
+            return VehicleBase.DEFAULT_MAX_SPEED;
+        }
+
+        return maxSpeeds[upgrade];
     }
 }

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 114000013321226118}
+  - 50: {fileID: 50000011910883670}
   m_Layer: 0
   m_Name: OpponentCar
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.254, y: -1.059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -195,6 +196,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 4
+--- !u!50 &50000011910883670
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 1
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58000011150394894
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -308,6 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae1fd3f08b626a4fb6a5118a8f7ef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carStyle: 3
+  carColor: 0
+  upgradeLevel: 0
 --- !u!114 &114000013936519638
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,7 +22,7 @@ public class CarDataLookup : MonoBehaviour
     public List<CarData> _dataList = new List<CarData>();
     private Dictionary<string, CarData> _dataLookup;
 
-    public void Start()
+    public void Awake()
     {
         _dataLookup = new Dictionary<string, CarData>();
         for( int i = 0; i < _dataList.Count; ++i)
@@ -64,5 +64,12 @@ public enum CarColor
     Yellow,
     Black,
     Any
+}
+
+public enum UpgradeLevel
+{
+    Basic,
+    Standard,
+    Advanced
 }
 
