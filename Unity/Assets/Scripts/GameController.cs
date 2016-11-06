@@ -35,9 +35,11 @@ public class GameController : MonoBehaviour, MPUpdateListener
 	public float[] startTimesPerLevel;
 	public int[] lapsPerLevel;
     public AudioSource SFXPlaybackSource;
-    public GameRules rules;
+    public List<GameRules> rules;
 
     public bool _paused;
+
+    private GameRules _currentRule;
 	private float _timeLeft;
 	private float _timePlayed;
 	private int _lapsRemaining;
@@ -51,6 +53,9 @@ public class GameController : MonoBehaviour, MPUpdateListener
     private float _timeOutCheckInterval = 1.0f;
     private float _nextTimeoutCheck = 0.0f;
     private RaceTrackController _trackController;
+
+    private List<VehicleBase> _vehicles;
+    public List<VehicleBase> Vehicles { get { return _vehicles; } }
 
     // Use this for initialization
     void Start ()
@@ -69,6 +74,28 @@ public class GameController : MonoBehaviour, MPUpdateListener
             SetupMultiplayerGame();
 		}
 	}
+
+    private void OnRuleFinished()
+    {
+        AdvanceToNextRule();
+    }
+
+    private void AdvanceToNextRule()
+    {
+        if (rules.Count > 0)
+        {
+            _currentRule = rules[rules.Count - 1];
+            rules.Remove(_currentRule);
+
+            _currentRule.OnFinish = OnRuleFinished;
+            _currentRule.Begin();
+        }
+        else
+        {
+            _currentRule = null;
+            // FINISHED ALL THE RULES!!!
+        }
+    }
 
     private void OnLapFinished(string id)
     {
@@ -117,10 +144,16 @@ public class GameController : MonoBehaviour, MPUpdateListener
         
         car.SpawnAtStart(0);
 
-        if (rules != null)
+        VehicleBase[] cars = FindObjectsOfType<VehicleBase>();
+        _vehicles = new List<VehicleBase>(cars.Length);
+        for (int i = 0; i < cars.Length; ++i)
         {
-            rules.Begin();
+            _vehicles.Add(cars[i]);
         }
+
+        // Rules are created with the expectation that top will execute first, but data works better to remove from the end
+        rules.Reverse();
+        AdvanceToNextRule();
     }
 
     void SetupMultiplayerGame() {
@@ -156,7 +189,6 @@ public class GameController : MonoBehaviour, MPUpdateListener
         _multiplayerReady = true;
     }
 
-
 	void PauseGame() {
 		_paused = true;
 		myCar.GetComponent<CarController>().SetPaused(true);
@@ -191,7 +223,6 @@ public class GameController : MonoBehaviour, MPUpdateListener
             }
         }
 	}
-    
     
     void DoMultiplayerUpdate() {
         if (NetworkProvider.Instance == null)
