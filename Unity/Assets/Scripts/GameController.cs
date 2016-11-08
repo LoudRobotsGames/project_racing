@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour, MPUpdateListener
 	public int[] lapsPerLevel;
     public AudioSource SFXPlaybackSource;
     public List<GameRules> rules;
+    public int numOpponents = 1;
 
     public bool _paused;
 
@@ -143,6 +144,15 @@ public class GameController : MonoBehaviour, MPUpdateListener
         _trackController.targetLaps = _lapsRemaining;
         
         car.SpawnAtStart(0);
+
+        for (int i = 0; i < numOpponents; ++i)
+        {
+            GameObject c = GameObject.Instantiate(opponentPrefab);
+            VehicleBase v = c.GetComponent<VehicleBase>();
+            v.Setup();
+            v.SetCarChoice(0, false);
+            v.SpawnAtStart(i + 1);
+        }
 
         VehicleBase[] cars = FindObjectsOfType<VehicleBase>();
         _vehicles = new List<VehicleBase>(cars.Length);

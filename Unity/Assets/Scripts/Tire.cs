@@ -4,7 +4,7 @@ using System.Collections;
 public class Tire : MonoBehaviour
 {
     private int layer;
-    public bool isOnTrack = false;
+    public bool isOnTrack = true;
 
     public void Start()
     {

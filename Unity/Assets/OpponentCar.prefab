@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.254, y: -1.059, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -204,9 +204,9 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 1
+  m_Mass: 3
+  m_LinearDrag: 3
+  m_AngularDrag: 3
   m_GravityScale: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0af2a4b738abf542aa47d4d12464dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnTrack: 0
+  isOnTrack: 1
 --- !u!114 &114000012800232956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0af2a4b738abf542aa47d4d12464dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnTrack: 0
+  isOnTrack: 1
 --- !u!114 &114000013321226118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,6 +326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae1fd3f08b626a4fb6a5118a8f7ef42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tires:
+  - {fileID: 114000012800232956}
+  - {fileID: 114000013936519638}
+  - {fileID: 114000010291123160}
+  - {fileID: 114000014165991970}
+  id: 
   carStyle: 3
   carColor: 0
   upgradeLevel: 0
@@ -340,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0af2a4b738abf542aa47d4d12464dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnTrack: 0
+  isOnTrack: 1
 --- !u!114 &114000014165991970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0af2a4b738abf542aa47d4d12464dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnTrack: 0
+  isOnTrack: 1
 --- !u!212 &212000012060300740
 SpriteRenderer:
   m_ObjectHideFlags: 1

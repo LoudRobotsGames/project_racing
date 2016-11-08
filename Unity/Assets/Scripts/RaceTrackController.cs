@@ -74,7 +74,7 @@ public class RaceTrackController : MonoBehaviour, ITiledComponent
 	
     public TrackNavigation StartingLink { get { return _startingNavLine; } }
 
-    public void CrossFinishLine(CarController car)
+    public void CrossFinishLine(VehicleBase car)
     {
         Vector3 heading = car.transform.right;
         float dot = Vector3.Dot(_startingNavLine.transform.right, heading);

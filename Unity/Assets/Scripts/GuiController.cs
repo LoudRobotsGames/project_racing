@@ -21,6 +21,7 @@ public class GuiController : MonoBehaviour
 	public GUIText timeText;
     [SerializeField]
     private Text _centerNotification;
+    private Vector3 _centerNotificationPosition;
 
     private int _laps;
 	private float _timeToShow;
@@ -29,6 +30,7 @@ public class GuiController : MonoBehaviour
 	void Start ()
     {
         _centerNotification.gameObject.SetActive(false);
+        _centerNotificationPosition = _centerNotification.transform.localPosition;
     }
 
 	public void SetLaps(int laps) {
@@ -68,7 +70,7 @@ public class GuiController : MonoBehaviour
 
     public IEnumerator MoveUpRoutine(float duration)
     {
-        _centerNotification.transform.localPosition = Vector3.zero;
+        _centerNotification.transform.localPosition = _centerNotificationPosition;
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
         float time = Time.time;
         while(Time.time < time + duration)

@@ -9,7 +9,7 @@ public class StartPoint : MonoBehaviour, ITiledComponent
     public int startIndex = -1;
     public Vector3 spawnPoint;
 
-    public void Start()
+    public void Awake()
     {
         Renderer r = GetComponentInChildren<Renderer>();
         spawnPoint = r.bounds.center;
