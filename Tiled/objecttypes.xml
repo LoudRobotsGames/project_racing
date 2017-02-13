@@ -3,4 +3,7 @@
  <objecttype name="Road_Track" color="#a0a0a4">
   <property name="unity:isTrigger" type="string" default="true"/>
  </objecttype>
+ <objecttype name="FinishLine" color="#00ff00">
+  <property name="unity:isTrigger" type="string" default="true"/>
+ </objecttype>
 </objecttypes>

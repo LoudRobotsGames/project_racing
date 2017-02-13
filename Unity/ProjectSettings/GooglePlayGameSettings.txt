@@ -8,3 +8,5 @@ and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0
 and.ClientId=266818733976-3l6mu5o7e3p58f3i1lka4cem9lqhpn5a.apps.googleusercontent.com
 proj.requireGPlus=false
 android.SetupDone=true
+App.NearbdServiceId=com.loudrobots.raceacademy
+android.NearbySetupDone=true

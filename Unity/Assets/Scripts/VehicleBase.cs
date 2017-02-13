@@ -18,8 +18,15 @@ public class VehicleBase : MonoBehaviour
     protected bool _paused = false;
     protected bool _stopped = false;
     protected Vector2 _input;
+    protected Vector2 _velocity;
+    [Range(0f, 1f)]
+    [SerializeField]
+    protected float _traction = 1f;
+    [SerializeField]
+    protected float _slipFactor = 0.25f;
     protected float _radiusModifier = 1f;
     protected float _slerpFactor = 8f;
+    protected bool _boosting = false;
 
     protected Rigidbody2D _rigidBody;
     protected RaceTrackController _trackController;
@@ -31,6 +38,7 @@ public class VehicleBase : MonoBehaviour
         _trackController = FindObjectOfType<RaceTrackController>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _input = Vector2.zero;
+        _velocity = Vector2.zero;
     }
 
     public void SpawnAtStart(int index)
@@ -77,6 +85,7 @@ public class VehicleBase : MonoBehaviour
     {
         _stopped = true;
         _rigidBody.velocity = Vector2.zero;
+        _velocity = Vector2.zero;
     }
 
     public void Release()
@@ -120,7 +129,7 @@ public class VehicleBase : MonoBehaviour
                 }
                 else if (link.index > lastNavIndex + 1 && !_trackLink.crossesFinishLine)
                 {
-                    transform.position = _trackLink.previousNavigationLink.position;
+                    //transform.position = _trackLink.previousNavigationLink.position;
                 }
             }
             else
@@ -132,6 +141,8 @@ public class VehicleBase : MonoBehaviour
                 }
             }
         }
+
+        _boosting = Input.GetButton("Boost");
         PostUpdate();
     }
 
@@ -139,7 +150,8 @@ public class VehicleBase : MonoBehaviour
     {
         if (_paused || _stopped) return;
 
-        float carSpeed = _carSpeed;
+        float traction = _boosting ? _traction * _slipFactor : _traction;
+        float carSpeed = _boosting ? _carSpeed * 1.25f : _carSpeed;
         float drag = carSpeed / (tires.Length + 1);
         for (int i = 0; i < tires.Length; ++i)
         {
@@ -148,13 +160,15 @@ public class VehicleBase : MonoBehaviour
                 carSpeed -= drag;
             }
         }
+
         // Add a vector related to the steering
-        _rigidBody.velocity = _input * carSpeed;
+        _velocity = _input * carSpeed; 
+        _rigidBody.velocity = Vector2.Lerp(_rigidBody.velocity, _velocity, traction); ;
 
         // Turn towards the direction we're traveling
         if (_rigidBody.velocity.magnitude > 0.2f)
         {
-            float targetAngle = Mathf.Atan2(_rigidBody.velocity.y, _rigidBody.velocity.x) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(_velocity.y, _velocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngle), _slerpFactor * Time.deltaTime);
         }
     }
